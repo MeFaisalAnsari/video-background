@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .switch {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s ease-in;
+        }
+
+        .slide .switch {
+            left: 50%;
+        }
+
+        .preloader {
+            visibility: visible;
+            z-index: 999;
+        }
+
+        .hide-preloader {
+            visibility: hidden;
+            z-index: -999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader fixed inset-0 bg-white flex justify-center items-center">
+        <img src="./Iphone-spinner-2.gif" alt="Preloader">
+    </div>
+    <div class="relative w-full h-screen flex justify-center items-center text-center">
+        <h1 class="text-white z-10 text-5xl font-semibold tracking-widest uppercase">Video Project</h1>
+        <video class="video w-full h-full object-cover absolute inset-0" muted autoplay loop>
+            <source src="./pexels-mikhail-nilov-6981411-1280x720-25fps.mp4" type="video/mp4">
+            </source>
+        </video>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <button class="switch-btn absolute left-8 bottom-8 z-10 bg-white rounded-lg font-semibold">
+            <span class="inline-block py-2 px-4">play</span>
+            <span class="inline-block py-2 px-4">pause</span>
+            <span class="switch rounded-lg bg-sky-500"></span>
+        </button>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
